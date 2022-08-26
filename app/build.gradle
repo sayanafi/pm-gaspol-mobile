@@ -4,7 +4,7 @@ plugins {
 
 android {
     compileSdkVersion 32
-    buildToolsVersion "31.0.0"
+
 
     defaultConfig {
         applicationId "com.pasukanlangit.pmgaspol"
@@ -30,7 +30,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.+'
