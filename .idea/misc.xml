@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_create_project.xml" value="0.21784420289855072" />
+        <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_individual_task.xml" value="0.21784420289855072" />
         <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_login.xml" value="0.21784420289855072" />
+        <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_profile.xml" value="0.4" />
         <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/ggit/pm-gaspol-mobile/app/src/main/res/layout/activity_team_task.xml" value="0.21784420289855072" />
       </map>
     </option>
   </component>
