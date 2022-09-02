@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<!--Default Color-->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,26 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--Brand Color-->
+    <color name="primary_blue">#0F7EF8</color>
+    <color name="secondary_blue">#C9E0FA</color>
+    <color name="primary_dark">#343A40</color>
+    <color name="text_color">#494E53</color>
+    <color name="background">#F8F9FA</color>
+    <color name="form">#D7D7D8</color>
+    
+<!--Additional Color-->
+    <color name="text_success">#00B67A</color>
+    <color name="background_success">#C3E6CB</color>
+    <color name="text_progress">#85780B</color>
+    <color name="background_progress">#F8EFA1</color>
+    <color name="text_error">#DC0909</color>
+    <color name="background_error">#FFC8C8</color>
+    
+<!--Pie Color-->
+    <color name="orange">#ECB056</color>
+    <color name="green">#B2DB10</color>
+    <color name="tosca">#10DB98</color>
+    <color name="blue">#3996FD</color>
 </resources>
