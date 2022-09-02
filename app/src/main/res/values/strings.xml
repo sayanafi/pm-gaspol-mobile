@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PM Gaspol</string>
+    <string name="title_home">Home</string>
+    <string name="title_intask">Individual Task</string>
+    <string name="title_listteam">List Team</string>
+    <string name="title_profile">Profile</string>
 </resources>
