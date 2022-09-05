@@ -101,7 +101,7 @@
         android:layout_marginTop="200dp"
         android:paddingTop="135dp"
         android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:paddingEnd="0dp"
         android:background="@drawable/card_dashboard"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/nav_view"
@@ -111,11 +111,119 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Project by Teams"
+            android:layout_marginRight="20dp"
             android:fontFamily="@font/intersemibold"
             android:textSize="20dp"
             android:textColor="@color/primary_dark">
 
         </TextView>
+
+        <HorizontalScrollView
+            android:id="@+id/teamCategory"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/ctgActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/category_slide"
+                    android:fontFamily="@font/intermedium"
+                    android:text="Dewabiz"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/ctgNonActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/category_slide_non"
+                    android:fontFamily="@font/intermedium"
+                    android:text="Iosys"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16dp">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/ctgNonActive2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/category_slide_non"
+                    android:fontFamily="@font/intermedium"
+                    android:text="Cashplus"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16dp">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/ctgNonActive3"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/category_slide_non"
+                    android:fontFamily="@font/intermedium"
+                    android:text="ST24"
+                    android:textAllCaps="false"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="16dp">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginTop="35dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Redesign Main Website">-->
+
+<!--                </TextView>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
 
     </LinearLayout>
 
