@@ -91,9 +91,9 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    private class UploadFileToServer extends AsyncTask<Void, Integer, String>{
-
-        protected void onPreExececute(){
+    private class UploadFileToServer extends AsyncTask<Void, Integer, String> {
+        @Override
+        protected void onPreExecute() {
             progDi = new ProgressDialog(Login.this);
             progDi.setMessage("Masuk...");
             progDi.setIndeterminate(false);
@@ -111,68 +111,68 @@ public class Login extends AppCompatActivity {
                 data = uploadFile();
             } catch (Exception e) {
                 e.printStackTrace();
-                data = "FAILED";
+                data = "FAIL";
             }
             return data;
         }
-    }
 
-    private String uploadFile() throws Exception {
-        URL url = new URL("http://54.251.203.35/usersapi");
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        AndroidMultiPartEntity entity = new AndroidMultiPartEntity(
-                new AndroidMultiPartEntity.ProgressListener() {
-                    @Override
-                    public void transferred(long num) {
-                        publishProgress((int) ((num / (float) totalSize) * 100));
-                    }
-                });
-        entity.addPart("email", new StringBody(email + ""));
-        entity.addPart("password", new StringBody(password + ""));
+        private String uploadFile() throws Exception {
+            URL url = new URL("https://pmgaspol.my.id/mobile/login.php");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            AndroidMultiPartEntity entity = new AndroidMultiPartEntity(
+                    new AndroidMultiPartEntity.ProgressListener() {
+                        @Override
+                        public void transferred(long num) {
+                            publishProgress(((int) ((num / (float) totalSize) * 100)));
+                        }
+                    });
+            entity.addPart("email", new StringBody(email + ""));
+            entity.addPart("password", new StringBody(password + ""));
 
-        totalSize = entity.getContentLength();
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Connection", "Keep-Alive");
-        con.addRequestProperty("Content-length", totalSize + "");
-        con.addRequestProperty(entity.getContentType().getName(), entity.getContentType().getValue());
+            totalSize = entity.getContentLength();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Connection", "Keep-Alive");
+            con.addRequestProperty("Content-length", totalSize + "");
+            con.addRequestProperty(entity.getContentType().getName(), entity.getContentType().getValue());
 
-        OutputStream os = con.getOutputStream();
-        entity.writeTo(con.getOutputStream());
-        os.close();
-        con.connect();
+            OutputStream os = con.getOutputStream();
+            entity.writeTo(con.getOutputStream());
+            os.close();
+            con.connect();
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuilder response = new StringBuilder();
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
 
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-
-        return response.toString();
-    }
-
-    protected void onPostExecute(String result) {
-        progDi.dismiss();
-        if (result != null) {
-            Log.e("UPLOAD", result);
-            if (!result.equalsIgnoreCase("FAILED")) {
-                String[] hasil = result.split("\\|");
-                SharedPreferences.Editor mEditor = getSharedPreferences("MOBILE", 0).edit();
-                mEditor.putString("user", hasil[0]).apply();
-                mEditor.putString("email", hasil[1]).apply();
-                mEditor.putString("ponsel", hasil[2]).apply();
-
-                Intent intent = new Intent(Login.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Snackbar.make(findViewById(android.R.id.content), "Pengguna atau Kata sandi salah!", Snackbar.LENGTH_LONG).show();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
             }
-        }
-        super.onPostExecute(result);
-    }
+            in.close();
 
+            return response.toString();
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            progDi.dismiss();
+            if (result != null) {
+                Log.e("UPLOAD", result);
+                if (!result.equalsIgnoreCase("FAILED")) {
+                    String[] hasil = result.split("\\|");
+                    SharedPreferences.Editor mEditor = getSharedPreferences("PMGASPOL", 0).edit();
+                    mEditor.putString("user", hasil[0]).apply();
+                    mEditor.putString("email", hasil[1]).apply();
+                    //mEditor.putString("password", hasil[2]).apply();
+
+                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Snackbar.make(findViewById(android.R.id.content), "Pengguna atau Kata sandi salah!", Snackbar.LENGTH_LONG).show();
+                }
+            }
+            super.onPostExecute(result);
+        }
+    }
 }
