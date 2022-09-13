@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/576637f61943277fca42712d189f9da0/jetified-bottomnavigationbar-0.9.6/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/576637f61943277fca42712d189f9da0/jetified-bottomnavigationbar-0.9.6/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/576637f61943277fca42712d189f9da0/jetified-bottomnavigationbar-0.9.6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6b048c0547d42f7cbf0b0bb197d7afc8/jetified-bottomnavigationbar-0.9.6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6b048c0547d42f7cbf0b0bb197d7afc8/jetified-bottomnavigationbar-0.9.6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6b048c0547d42f7cbf0b0bb197d7afc8/jetified-bottomnavigationbar-0.9.6/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eightbitlab/bottomnavigationbar/0.9.6/7a7a28d4b43eb49c67190a9140569523563d2c49/bottomnavigationbar-0.9.6-javadoc.jar!/" />

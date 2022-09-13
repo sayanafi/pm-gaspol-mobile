@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar();
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
 
         //initiate field
@@ -165,7 +165,7 @@ public class Login extends AppCompatActivity {
                     mEditor.putString("email", hasil[1]).apply();
                     //mEditor.putString("password", hasil[2]).apply();
 
-                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    Intent intent = new Intent(Login.this, Dashboard.class);
                     startActivity(intent);
                     finish();
                 } else {

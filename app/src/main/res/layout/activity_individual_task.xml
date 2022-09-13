@@ -4,49 +4,544 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Individual_task">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Task"
+    <!-- Bottom Menu -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/nav_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/white"
+        app:labelVisibilityMode="unlabeled"/>
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="immediately complete your assigned task"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+    <!-- Heading -->
+    <RelativeLayout
+        android:id="@+id/headingTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        android:padding="20dp"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Task assigned to you"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            <!-- Title Page -->
+            <TextView
+                android:id="@+id/titlePage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/intersemibold"
+                android:text="Task"
+                android:textColor="@color/primary_dark"
+                android:textSize="20dp"></TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            <!-- Desc Page -->
+            <TextView
+                android:id="@+id/descTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titlePage"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/interregular"
+                android:text="Immediately complete your assigned task 🤘"
+                android:textColor="@color/primary_dark"
+                android:textSize="14dp" />
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/imguser"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="50dp"
+                android:src="@drawable/notification"></ImageView>
+
+            <!-- Search Bar -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/field_style"
+                app:queryHint="Search task ..."
+                android:layout_below="@id/descTitle"/>
+
+        </RelativeLayout>
+
+    <!-- Content -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="190dp"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/card_dashboard">
+
+            <!-- Content Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/intersemibold"
+                android:text="Task assigned to you"
+                android:textColor="@color/primary_dark"
+                android:textSize="20dp"></TextView>
+
+            <!-- Card - Task 1 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Title Task -->
+                    <TextView
+                        android:id="@+id/title_taskonproject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/intersemibold"
+                        android:text="Client objective"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="18dp"></TextView>
+
+                    <!-- Status Task -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/stsOnProgress"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="100dp"
+                        android:background="@drawable/sts_onprogress"
+                        android:fontFamily="@font/intermedium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="on progress"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_progress"
+                        android:textSize="12dp">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <!-- Checklist -->
+                    <LinearLayout
+                        android:id="@+id/task_checklist_row"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/title_taskonproject"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/taskdetailnew">
+                        </ImageView>
+
+                        <!--Checklist total in Task-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Checklist : "
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/totaltask_project"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6/10"
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                    </LinearLayout>
+
+                    <!-- Task in Team -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/task_checklist_row"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/member">
+                        </ImageView>
+
+                        <!--Task on Team-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Task in : "
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/nama_team"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dewabiz"
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+                    </LinearLayout>
+
+                    <!-- Detail Date -->
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="30dp"
+                        android:layout_below="@id/stsOnProgress"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:id="@+id/date_finishdate_project"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/intermedium"
+                            android:text="16/04/22"
+                            android:textColor="@color/text_color"
+                            android:textSize="12dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/duedate_project"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/intermedium"
+                            android:text="Due 4 days"
+                            android:textColor="@color/text_error"
+                            android:textSize="14dp"></TextView>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card - Task 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Title Task -->
+                    <TextView
+                        android:id="@+id/title_taskonproject2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/intersemibold"
+                        android:text="New brand mood boards"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="18dp"></TextView>
+
+                    <!-- Status Task -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/stsCompleted"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="100dp"
+                        android:background="@drawable/sts_completed"
+                        android:fontFamily="@font/intermedium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="completed"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_success"
+                        android:textSize="12dp">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <!-- Checklist -->
+                    <LinearLayout
+                        android:id="@+id/task_checklist_row2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/title_taskonproject2"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/taskdetailnew">
+                        </ImageView>
+
+                        <!--Checklist total in Task-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Checklist : "
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/totaltask_project2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7/7"
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                    </LinearLayout>
+
+                    <!-- Task in Team -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/task_checklist_row2"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/member">
+                        </ImageView>
+
+                        <!--Task on Team-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Task in : "
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/nama_team2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ST24"
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+                    </LinearLayout>
+
+                    <!-- Detail Date -->
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="30dp"
+                        android:layout_below="@id/stsCompleted"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:id="@+id/date_finishdate_project2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/intermedium"
+                            android:text="20/03/22"
+                            android:textColor="@color/text_color"
+                            android:textSize="12dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/duedate_project2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/intermedium"
+                            android:text="0 days left"
+                            android:textColor="@color/text_color"
+                            android:textSize="14dp"></TextView>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card - Task 3 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Title Task -->
+                    <TextView
+                        android:id="@+id/title_taskonproject3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/intersemibold"
+                        android:text="Launching new product"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="18dp"></TextView>
+
+                    <!-- Status Task -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/stsNotStarted"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="100dp"
+                        android:background="@drawable/sts_notstarted"
+                        android:fontFamily="@font/intermedium"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:text="not started"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_error"
+                        android:textSize="12dp">
+
+                    </androidx.appcompat.widget.AppCompatButton>
+
+                    <!-- Checklist -->
+                    <LinearLayout
+                        android:id="@+id/task_checklist_row3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/title_taskonproject3"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/taskdetailnew">
+                        </ImageView>
+
+                        <!--Checklist total in Task-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Checklist : "
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/totaltask_project3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0/20"
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                    </LinearLayout>
+
+                    <!-- Task in Team -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/task_checklist_row3"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/member">
+                        </ImageView>
+
+                        <!--Task on Team-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Task in : "
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/nama_team3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Iosys"
+                            android:textColor="@color/text_color"
+                            android:textSize="16dp"></TextView>
+                    </LinearLayout>
+
+                    <!-- Detail Date -->
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="30dp"
+                        android:layout_below="@id/stsNotStarted"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:id="@+id/date_finishdate_project3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/intermedium"
+                            android:text="02/04/22"
+                            android:textColor="@color/text_color"
+                            android:textSize="12dp"></TextView>
+
+                        <TextView
+                            android:id="@+id/duedate_project3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/intermedium"
+                            android:text="20 days left"
+                            android:textColor="@color/text_color"
+                            android:textSize="14dp"></TextView>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
