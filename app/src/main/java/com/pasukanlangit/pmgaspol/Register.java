@@ -61,7 +61,18 @@ public class Register extends AppCompatActivity {
                 password = Login.md5(txtpass.getText().toString());
 
                 if (isEmailValid(email)) {
-                    new UploadFileToServer().execute();
+                    if (txtpass.length() < 8){
+                        Snackbar.make(findViewById(android.R.id.content), "password minimal 8 karakter", Snackbar.LENGTH_LONG).show();
+                    }
+                    else {
+                        //Snackbar.make(findViewById(android.R.id.content), "sukses", Snackbar.LENGTH_LONG).show();
+                        //new UploadFileToServer().execute();
+                        if (user.isEmpty()){
+                            Snackbar.make(findViewById(android.R.id.content), "nama kosong cuy", Snackbar.LENGTH_LONG).show();
+                        }
+                        else {
+                            new UploadFileToServer().execute();}
+                    }
                 } else {
                     Snackbar.make(findViewById(android.R.id.content), "Format email salah!", Snackbar.LENGTH_LONG).show();
                 }
