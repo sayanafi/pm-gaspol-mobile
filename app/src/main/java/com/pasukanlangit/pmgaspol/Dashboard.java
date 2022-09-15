@@ -50,8 +50,16 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        getSupportActionBar();
         setContentView(R.layout.activity_dashboard);
+
+        //SAY MY NAMEEE
+        if (getSharedPreferences("PMGASPOL", 0) == null || !getSharedPreferences("PMGASPOL", 0).contains("user")) {
+            startActivity(new Intent(Dashboard.this, com.pasukanlangit.pmgaspol.Login.class));
+            finish();
+        }
+
+        ((TextView) findViewById(R.id.userfullname)).setText(getSharedPreferences("PMGASPOL", 0).getString("user", ""));
 
         //legend = findViewById(R.id.chartlegend);
         pieChart = findViewById(R.id.chartoverview);

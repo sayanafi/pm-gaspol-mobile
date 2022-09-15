@@ -14,7 +14,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        getSupportActionBar();
         setContentView(R.layout.activity_profile);
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);

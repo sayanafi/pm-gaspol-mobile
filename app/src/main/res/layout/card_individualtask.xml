@@ -35,7 +35,7 @@
                 android:id="@+id/status_individualtask"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:src="@drawable/sts_onprogress"
+                android:src="@drawable/sts_onprogresss"
                 android:layout_alignParentRight="true">
             </ImageView>
 
