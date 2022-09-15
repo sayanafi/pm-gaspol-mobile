@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_individualtask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <!-- Title Task -->
+            <TextView
+                android:id="@+id/title_individualtask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/intersemibold"
+                android:text="Client objective"
+                android:textColor="@color/primary_dark"
+                android:textSize="18dp"></TextView>
+
+            <!-- Status Task -->
+            <ImageView
+                android:id="@+id/status_individualtask"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/sts_onprogress"
+                android:layout_alignParentRight="true">
+            </ImageView>
+
+            <!-- Checklist -->
+            <LinearLayout
+                android:id="@+id/checklistrow_individualtask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/title_individualtask"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/taskdetailnew">
+                </ImageView>
+
+                <!--Checklist total in Task-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Checklist : "
+                    android:textColor="@color/text_color"
+                    android:textSize="16dp"></TextView>
+
+                <TextView
+                    android:id="@+id/lbl_totalchecklistproject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6/10"
+                    android:textColor="@color/text_color"
+                    android:textSize="16dp"></TextView>
+
+            </LinearLayout>
+
+            <!-- Task in Team -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_below="@id/checklistrow_individualtask"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/member">
+                </ImageView>
+
+                <!--Task on Team-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task in : "
+                    android:textColor="@color/text_color"
+                    android:textSize="16dp"></TextView>
+
+                <TextView
+                    android:id="@+id/lbl_teamname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dewabiz"
+                    android:textColor="@color/text_color"
+                    android:textSize="16dp"></TextView>
+            </LinearLayout>
+
+            <!-- Detail Date -->
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/status_individualtask"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:id="@+id/lbl_task_finishdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/intermedium"
+                    android:text="16/04/22"
+                    android:textColor="@color/text_color"
+                    android:textSize="12dp"></TextView>
+
+                <TextView
+                    android:id="@+id/lbl_task_duedate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:fontFamily="@font/intermedium"
+                    android:text="Due 4 days"
+                    android:textColor="@color/text_error"
+                    android:textSize="14dp"></TextView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
