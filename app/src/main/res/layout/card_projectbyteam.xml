@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_individualtask"
+        android:id="@+id/card_projectbyteam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
@@ -20,34 +20,34 @@
             android:layout_height="wrap_content"
             android:padding="20dp">
 
-            <!-- Title Task -->
+            <!-- Title Project -->
             <TextView
-                android:id="@+id/title_individualtask"
+                android:id="@+id/title_project"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/intersemibold"
-                android:text="Client objective"
+                android:text="Redesign Main Website"
                 android:textColor="@color/primary_dark"
                 android:textSize="18dp"></TextView>
 
-            <!-- Status Task -->
+            <!-- Status Project -->
             <ImageView
-                android:id="@+id/status_individualtask"
+                android:id="@+id/status_project"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:src="@drawable/sts_onprogress_style"
+                android:src="@drawable/sts_notstarted_style"
                 android:layout_alignParentRight="true">
             </ImageView>
 
-            <!-- Checklist -->
+            <!-- Total Task on Project -->
             <LinearLayout
-                android:id="@+id/checklistrow_individualtask"
+                android:id="@+id/taskrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal"
-                android:layout_below="@id/title_individualtask"
+                android:layout_below="@id/title_project"
                 android:layout_alignParentLeft="true">
 
                 <ImageView
@@ -57,17 +57,15 @@
                     android:src="@drawable/taskdetailnew">
                 </ImageView>
 
-                <!--Checklist total in Task-->
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Checklist : "
+                    android:text="Complete Task : "
                     android:textColor="@color/text_color"
                     android:textSize="16dp"></TextView>
 
                 <TextView
-                    android:id="@+id/lbl_totalchecklistproject"
+                    android:id="@+id/lbl_totalprojecttask"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6/10"
@@ -76,13 +74,13 @@
 
             </LinearLayout>
 
-            <!-- Task in Team -->
+            <!-- Total Member on Project -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:layout_below="@id/checklistrow_individualtask"
+                android:layout_below="@id/taskrow"
                 android:layout_alignParentLeft="true">
 
                 <ImageView
@@ -92,20 +90,18 @@
                     android:src="@drawable/member">
                 </ImageView>
 
-                <!--Task on Team-->
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Task in : "
+                    android:text="Total Member : "
                     android:textColor="@color/text_color"
                     android:textSize="16dp"></TextView>
 
                 <TextView
-                    android:id="@+id/lbl_teamname"
+                    android:id="@+id/lbl_totalprojectmember"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dewabiz"
+                    android:text="4"
                     android:textColor="@color/text_color"
                     android:textSize="16dp"></TextView>
             </LinearLayout>
@@ -116,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="30dp"
-                android:layout_below="@id/status_individualtask"
+                android:layout_below="@id/status_project"
                 android:layout_alignParentRight="true">
 
                 <TextView
