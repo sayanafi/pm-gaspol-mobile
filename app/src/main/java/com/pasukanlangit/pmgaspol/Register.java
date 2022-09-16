@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar();
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_register);
 
         txtuser = findViewById(R.id.editNameRegister);

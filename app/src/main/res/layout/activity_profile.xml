@@ -61,6 +61,19 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/lbl_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/text_error"
+            android:fontFamily="@font/intermedium"
+            android:textSize="14dp"
+            android:clickable="true">
+        </TextView>
+
         <!-- User Info -->
         <RelativeLayout
             android:layout_width="match_parent"

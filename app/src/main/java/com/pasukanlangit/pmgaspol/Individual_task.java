@@ -31,7 +31,7 @@ public class Individual_task extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar();
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_individual_task);
 
         // Initialize and assign variable

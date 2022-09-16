@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar();
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
 
         //initiate field
