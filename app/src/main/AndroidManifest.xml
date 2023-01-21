@@ -7,9 +7,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
 
 
     <application
@@ -26,16 +24,16 @@
             android:name=".Create_project"
             android:exported="false" />
         <activity
-            android:name=".Profile"
+            android:name=".Main.Profile"
             android:exported="false" />
         <activity
-            android:name=".Team_task"
+            android:name=".Main.Team_task"
             android:exported="false" />
         <activity
-            android:name=".Individual_task"
+            android:name=".Main.Individual_task"
             android:exported="false" />
         <activity
-            android:name=".Dashboard"
+            android:name=".Main.Dashboard"
             android:exported="false" />
         <activity
             android:name=".Register"

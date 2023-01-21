@@ -93,7 +93,7 @@
             android:textColorHint="@color/form" />
 
         <EditText
-            android:id="@+id/editPasswordRegiste"
+            android:id="@+id/editPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
