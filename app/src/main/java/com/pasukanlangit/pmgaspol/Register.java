@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.pasukanlangit.pmgaspol.Config.ApiClient;
+import com.pasukanlangit.pmgaspol.Config.ApiRegister;
 import com.pasukanlangit.pmgaspol.Config.ApiInterface;
 
 import java.util.Objects;
@@ -36,7 +36,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
-
+        //Initialize Login API
         EditText nama = findViewById(R.id.editNameRegister);
         EditText email = findViewById(R.id.editEmailRegister);
         EditText password = findViewById(R.id.editPasswordRegister);
@@ -50,19 +50,21 @@ public class Register extends AppCompatActivity {
         });
     }
 
+    //Login API
     private void post(String nama, String email, String pass) {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://pmgaspol.my.id/UsersApi/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiInterface retrofitAPI = retrofit.create(ApiInterface.class);
-        ApiClient userModel1 = new ApiClient(nama, email, pass);
-        Call<ApiClient> call = retrofitAPI.createPost(userModel1);
-        call.enqueue(new Callback<ApiClient>() {
+        ApiRegister userModel1 = new ApiRegister(nama, email, pass);
+        Call<ApiRegister> call = retrofitAPI.registerPost(userModel1);
+        call.enqueue(new Callback<ApiRegister>() {
             @Override
-            public void onResponse(Call<ApiClient> call, Response<ApiClient> response) {
-                Toast.makeText(Register.this, "Data added to API " + response.code(), Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<ApiRegister> call, Response<ApiRegister> response) {
+                Toast.makeText(Register.this, "Registration Succes (Response " + response.code() + " )", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Register.this, Login.class));
             }
 
             @Override
-            public void onFailure(Call<ApiClient> call, Throwable t) {
+            public void onFailure(Call<ApiRegister> call, Throwable t) {
                 Toast.makeText(Register.this, "error" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

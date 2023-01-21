@@ -3,7 +3,7 @@ package com.pasukanlangit.pmgaspol.Config;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ApiClient {
+public class ApiRegister {
     @SerializedName("nama")
     @Expose
     private String nama;
@@ -20,7 +20,7 @@ public class ApiClient {
     @Expose
     private String password;
 
-    public ApiClient(String nama, String email, String phone_number) {
+    public ApiRegister(String nama, String email, String phone_number) {
         this.nama = nama;
         this.email = email;
 //        this.phone_number = phone_number;
