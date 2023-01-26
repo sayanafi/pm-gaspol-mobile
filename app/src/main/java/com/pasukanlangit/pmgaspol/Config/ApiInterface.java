@@ -1,5 +1,6 @@
 package com.pasukanlangit.pmgaspol.Config;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.http.Body;
@@ -11,9 +12,9 @@ import retrofit2.http.Path;
 public interface ApiInterface {
     @Headers({"Accept: application/json"})
 
-    @GET("login")
-    Call<ApiLogin> loginPost(@Body ApiLogin userLogin);
+    @POST("login")
+    Call<ResponseBody> loginPost(@Body ApiLogin userLogin);
 
     @POST("register")
-    Call<ApiRegister> registerPost(@Body ApiRegister userModel);
+    Call<ResponseBody> registerPost(@Body ApiRegister userModel);
 }

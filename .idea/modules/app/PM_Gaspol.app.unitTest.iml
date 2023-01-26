@@ -42,7 +42,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.retrofit2:retrofit:2.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.okhttp3:okhttp:3.14.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.okio:okio:1.17.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.httpcomponents:httpcore:4.4.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.httpcomponents:httpmime:4.3.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.material:material:1.6.1@aar" level="project" />
@@ -88,6 +88,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.constraintlayout:constraintlayout:2.1.4@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.PhilJay:MPAndroidChart:v3.1.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.osmdroid:osmdroid-android:6.1.10@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.auth0.android:jwtdecode:2.0.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.f0ris.sweetalert:library:1.6.2@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.pnikosis:materialish-progress:1.7@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="PM_Gaspol.app.main" />
 </module>

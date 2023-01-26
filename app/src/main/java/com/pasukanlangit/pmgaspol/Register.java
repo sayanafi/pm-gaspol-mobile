@@ -14,6 +14,7 @@ import com.pasukanlangit.pmgaspol.Config.ApiInterface;
 
 import java.util.Objects;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -55,16 +56,17 @@ public class Register extends AppCompatActivity {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://pmgaspol.my.id/UsersApi/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiInterface retrofitAPI = retrofit.create(ApiInterface.class);
         ApiRegister userModel1 = new ApiRegister(nama, email, pass);
-        Call<ApiRegister> call = retrofitAPI.registerPost(userModel1);
-        call.enqueue(new Callback<ApiRegister>() {
+        Call<ResponseBody> call = retrofitAPI.registerPost(userModel1);
+
+        call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ApiRegister> call, Response<ApiRegister> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 Toast.makeText(Register.this, "Registration Succes (Response " + response.code() + " )", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Register.this, Login.class));
             }
 
             @Override
-            public void onFailure(Call<ApiRegister> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(Register.this, "error" + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
