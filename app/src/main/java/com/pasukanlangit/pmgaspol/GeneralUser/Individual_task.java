@@ -18,6 +18,7 @@ import com.pasukanlangit.pmgaspol.HttpHandler;
 import com.pasukanlangit.pmgaspol.ListAdapter;
 import com.pasukanlangit.pmgaspol.ListData;
 import com.pasukanlangit.pmgaspol.R;
+import com.pasukanlangit.pmgaspol.SuperUser.Dashboard_SU;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,14 +53,14 @@ public class Individual_task extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.navigation_home:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_intask:
-                        startActivity(new Intent(getApplicationContext(),Individual_task.class));
+                        startActivity(new Intent(getApplicationContext(), Dashboard_SU.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_listteam:
+                        startActivity(new Intent(getApplicationContext(),Individual_task.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_listmember:
                         startActivity(new Intent(getApplicationContext(),Team_task.class));
                         overridePendingTransition(0,0);
                         return true;

@@ -7,14 +7,14 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_intask"
-        android:icon="@drawable/taskicon"
-        android:title="@string/title_intask" />
+        android:id="@+id/navigation_listteam"
+        android:icon="@drawable/worksicon"
+        android:title="@string/title_listteam" />
 
     <item
-        android:id="@+id/navigation_listteam"
+        android:id="@+id/navigation_listmember"
         android:icon="@drawable/teamicon"
-        android:title="@string/title_listteam" />
+        android:title="@string/list_member_menu" />
 
     <item
         android:id="@+id/navigation_profile"

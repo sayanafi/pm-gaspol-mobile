@@ -43,9 +43,9 @@ public class Dashboard extends AppCompatActivity {
         ((TextView) findViewById(R.id.userfullname)).setText(getSharedPreferences("PMGASPOL", 0).getString("user", ""));
 
         //legend = findViewById(R.id.chartlegend);
-        pieChart = findViewById(R.id.chartoverview);
+//        pieChart = findViewById(R.id.chartoverview);
 //        setupPieChart();
-        loadPieData();
+//        loadPieData();
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
@@ -64,11 +64,11 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.navigation_intask:
+                    case R.id.navigation_listteam:
                         startActivity(new Intent(getApplicationContext(),Individual_task.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.navigation_listteam:
+                    case R.id.navigation_listmember:
                         startActivity(new Intent(getApplicationContext(),Team_task.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -82,28 +82,28 @@ public class Dashboard extends AppCompatActivity {
         });
     }
 
-    private void loadLegend() {
+    /*private void loadLegend() {
 
     }
 
-//    private void setupPieChart() {
-//        pieChart.setDrawHoleEnabled(true);
-////        pieChart.setUsePercentValues(false);
-//        pieChart.setCenterText("12");
-////        pieChart.setEntryLabelTextSize(12);
-////        pieChart.setEntryLabelColor(Color.WHITE);
-//        pieChart.setCenterTextSize(24);
-//        pieChart.getDescription().setEnabled(false);
-//        pieChart.setDrawEntryLabels(false);
-//
-//        Legend l = pieChart.getLegend();
-//        l.setForm(Legend.LegendForm.CIRCLE);
-//        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
-//        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
-//        l.setOrientation(Legend.LegendOrientation.VERTICAL);
-//        l.setDrawInside(true);
-//        l.setEnabled(false);
-//    }
+    private void setupPieChart() {
+        pieChart.setDrawHoleEnabled(true);
+//        pieChart.setUsePercentValues(false);
+        pieChart.setCenterText("12");
+//        pieChart.setEntryLabelTextSize(12);
+//        pieChart.setEntryLabelColor(Color.WHITE);
+        pieChart.setCenterTextSize(24);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setDrawEntryLabels(false);
+
+        Legend l = pieChart.getLegend();
+        l.setForm(Legend.LegendForm.CIRCLE);
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(true);
+        l.setEnabled(false);
+    }
 
     //LOAD DATA TOTAL PROJECT YANG AKTIF SETIAP TEAM
     private void loadPieData() {
@@ -135,6 +135,5 @@ public class Dashboard extends AppCompatActivity {
         pieChart.setData(data);
         pieChart.invalidate();
 
+    }*/
     }
-
-}

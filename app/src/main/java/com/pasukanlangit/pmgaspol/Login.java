@@ -24,8 +24,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,6 +48,7 @@ public class Login extends AppCompatActivity {
 
         sweetAlertDialog = new SweetAlertDialog(this,SweetAlertDialog.PROGRESS_TYPE);
         sweetAlertDialog.setTitle("Loading");
+
         //Go to Register Page
         findViewById(R.id.ButtonRegister).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +62,35 @@ public class Login extends AppCompatActivity {
         EditText password = findViewById(R.id.editPasswordLogin);
         Button submit = findViewById(R.id.ButtonLogin);
         submit.setOnClickListener(v -> {
-            sweetAlertDialog.show();
-            if (email.getText() == null || password.getText() == null) {
+            if (Objects.requireNonNull(email.getText()).length() == 0){
+                email.setError("Required Field!");
                 return;
             }
-            postLogin(email.getText().toString(), password.getText().toString());
+            if (Objects.requireNonNull(password.getText()).length() == 0){
+                password.setError("Required Field!");
+                return;
+            }
+            email.setError(null);
+            password.setError(null);
+            sweetAlertDialog.show();
+            postLogin(email.getText().toString(),password.getText().toString());
+
+//            sweetAlertDialog.show();
+//            if (email.getText() == null || password.getText() == null) {
+//                return;
+//            }
+//            postLogin(email.getText().toString(), password.getText().toString());
         });
 
     }
 
     private void postLogin(String email, String pass) {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .callTimeout(30, TimeUnit.SECONDS)
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .build();
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://pmgaspol.my.id/AuthApi/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiInterface retrofitAPI = retrofit.create(ApiInterface.class);
         ApiLogin userLogin = new ApiLogin(email, pass);
@@ -91,7 +113,7 @@ public class Login extends AppCompatActivity {
                     Log.e(TAG, "onFailure: ", json);
                     alert("Error throw " + json.getLocalizedMessage(), SweetAlertDialog.ERROR_TYPE);
                 }
-                Toast.makeText(Login.this, "Login Succes (Response " + response.code() + " )", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Login Success (Response " + response.code() + " )", Toast.LENGTH_SHORT).show();
             }
 
             @Override

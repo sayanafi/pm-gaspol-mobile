@@ -4,6 +4,374 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SuperUser.Dashboard_SU">
+    tools:context=".SuperUser.Dashboard_SU"
+    android:background="@color/background">
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/nav_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/white"
+        app:labelVisibilityMode="unlabeled"/>
+
+    <!-- Scroll Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Head -->
+            <RelativeLayout
+                android:id="@+id/headingTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                tools:ignore="MissingConstraints">
+
+                <!-- Static Label -->
+                <TextView
+                    android:id="@+id/lbl_hi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Hi, "
+                    android:textColor="@color/primary_dark"
+                    android:textSize="20dp"></TextView>
+
+                <!-- Name Label -->
+                <TextView
+                    android:id="@+id/userfullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lbl_hi"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Alexander Davinci"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="20dp"></TextView>
+
+                <!-- Static Label -->
+                <TextView
+                    android:id="@+id/descTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userfullname"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/interregular"
+                    android:text="Lets done your task today 🔥"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="14dp" />
+
+                <!-- Profile Picture -->
+                <ImageView
+                    android:id="@+id/imguser"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="50dp"
+                    android:src="@drawable/imguser"></ImageView>
+
+            </RelativeLayout>
+
+            <!-- Pie Chart Overview -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="20dp"
+                android:background="@drawable/overview_bg"
+                android:translationZ="1dp">
+
+
+                <!-- Static Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/intermedium"
+                    android:lineHeight="20dp"
+                    android:text="Summary your active\nprojects in all teams"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"></TextView>
+
+                <!-- Pie Overview -->
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/chartoverview"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <!-- List Project -->
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-100dp"
+                android:background="@drawable/card_dashboard"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="135dp"
+                android:paddingBottom="135dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/nav_view"
+                tools:ignore="MissingConstraints">
+
+                <!-- Static Label -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Project by Teams"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="20dp">
+
+                </TextView>
+
+                <!-- Slider Category -->
+                <HorizontalScrollView
+                    android:id="@+id/teamCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/ctgActive"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/category_slide"
+                            android:fontFamily="@font/intermedium"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="30dp"
+                            android:text="Dewabiz"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="16dp">
+
+                        </androidx.appcompat.widget.AppCompatButton>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/ctgNonActive"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/category_slide_non"
+                            android:fontFamily="@font/intermedium"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="30dp"
+                            android:text="Iosys"
+                            android:textAllCaps="false"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="16dp">
+
+                        </androidx.appcompat.widget.AppCompatButton>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/ctgNonActive2"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/category_slide_non"
+                            android:fontFamily="@font/intermedium"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="30dp"
+                            android:text="Cashplus"
+                            android:textAllCaps="false"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="16dp">
+
+                        </androidx.appcompat.widget.AppCompatButton>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/ctgNonActive3"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/category_slide_non"
+                            android:fontFamily="@font/intermedium"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="30dp"
+                            android:text="ST24"
+                            android:textAllCaps="false"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="16dp">
+
+                        </androidx.appcompat.widget.AppCompatButton>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <!-- Card List View -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_projectbyteam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    tools:ignore="MissingConstraints">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <!-- Title Project -->
+                        <TextView
+                            android:id="@+id/title_project"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/intersemibold"
+                            android:text="Redesign Main Website"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="18dp"></TextView>
+
+                        <!-- Status Project -->
+                        <ImageView
+                            android:id="@+id/status_project"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/sts_notstarted_style"
+                            android:layout_alignParentRight="true">
+                        </ImageView>
+
+                        <!-- Total Task on Project -->
+                        <LinearLayout
+                            android:id="@+id/taskrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:layout_below="@id/title_project"
+                            android:layout_alignParentLeft="true">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/taskdetailnew">
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Complete Task : "
+                                android:textColor="@color/text_color"
+                                android:textSize="16dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/lbl_totalprojecttask"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="6/10"
+                                android:textColor="@color/text_color"
+                                android:textSize="16dp"></TextView>
+
+                        </LinearLayout>
+
+                        <!-- Total Member on Project -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_below="@id/taskrow"
+                            android:layout_alignParentLeft="true">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/member">
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Member : "
+                                android:textColor="@color/text_color"
+                                android:textSize="16dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/lbl_totalprojectmember"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textColor="@color/text_color"
+                                android:textSize="16dp"></TextView>
+                        </LinearLayout>
+
+                        <!-- Detail Date -->
+                        <LinearLayout
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="30dp"
+                            android:layout_below="@id/status_project"
+                            android:layout_alignParentRight="true">
+
+                            <TextView
+                                android:id="@+id/lbl_task_finishdate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:fontFamily="@font/intermedium"
+                                android:text="16/04/22"
+                                android:textColor="@color/text_color"
+                                android:textSize="12dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/lbl_task_duedate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:fontFamily="@font/intermedium"
+                                android:text="Due 4 days"
+                                android:textColor="@color/text_error"
+                                android:textSize="14dp"></TextView>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

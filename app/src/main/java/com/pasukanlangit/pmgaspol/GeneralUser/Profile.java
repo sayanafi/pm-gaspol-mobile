@@ -9,6 +9,9 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.pasukanlangit.pmgaspol.R;
+import com.pasukanlangit.pmgaspol.SuperUser.Dashboard_SU;
+import com.pasukanlangit.pmgaspol.SuperUser.MemberList_SU;
+import com.pasukanlangit.pmgaspol.SuperUser.Teams_SU;
 
 public class Profile extends AppCompatActivity {
 
@@ -31,19 +34,19 @@ public class Profile extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.navigation_home:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.navigation_intask:
-                        startActivity(new Intent(getApplicationContext(),Individual_task.class));
+                        startActivity(new Intent(getApplicationContext(), Dashboard_SU.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_listteam:
-                        startActivity(new Intent(getApplicationContext(),Team_task.class));
+                        startActivity(new Intent(getApplicationContext(), Teams_SU.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.navigation_listmember:
+                        startActivity(new Intent(getApplicationContext(), MemberList_SU.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_profile:
-                        startActivity(new Intent(getApplicationContext(),Profile.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

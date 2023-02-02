@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SuperUser.MemberList_SU">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/nav_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/white"
+        app:labelVisibilityMode="unlabeled"/>
+
+    <!-- Heading -->
+    <RelativeLayout
+        android:id="@+id/headingTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Title Page -->
+        <TextView
+            android:id="@+id/titlePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/intersemibold"
+            android:text="Members"
+            android:textColor="@color/primary_dark"
+            android:textSize="20dp"></TextView>
+
+        <!-- Desc Page -->
+        <TextView
+            android:id="@+id/descTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titlePage"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/interregular"
+            android:text="Not a Superman, But a Superteam 😎"
+            android:textColor="@color/primary_dark"
+            android:textSize="14dp" />
+
+        <!-- Notification Icon -->
+        <ImageView
+            android:id="@+id/imguser"
+            android:layout_width="30dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/notification"></ImageView>
+
+
+    </RelativeLayout>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/card_dashboard">
+
+        <!-- Content Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/intersemibold"
+            android:text="List Approved Member"
+            android:textColor="@color/primary_dark"
+            android:textSize="20dp"></TextView>
+
+        <!-- Card - Team 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Title Team -->
+                <TextView
+                    android:id="@+id/title_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Dewabiz"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="18dp"></TextView>
+
+                <!-- Image Team -->
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/frame_imgteam">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:src="@drawable/dewabiz">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Total Project -->
+                <LinearLayout
+                    android:id="@+id/totalproject_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/title_team"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/taskdetailnew">
+                    </ImageView>
+
+                    <!--Checklist total in Task-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Project : "
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/totalproject_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+
+                </LinearLayout>
+
+                <!-- Total Member -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/totalproject_row"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/member">
+                    </ImageView>
+
+                    <!--Task on Team-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Member : "
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/totalmember_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14"
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card - Team 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Title Team -->
+                <TextView
+                    android:id="@+id/title_team2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="Iosys"
+                    android:textColor="@color/primary_dark"
+                    android:textSize="18dp"></TextView>
+
+                <!-- Image Team -->
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/frame_imgteam">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:src="@drawable/iosys">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+                <!-- Total Project -->
+                <LinearLayout
+                    android:id="@+id/totalproject_row2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/title_team2"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/taskdetailnew">
+                    </ImageView>
+
+                    <!--Checklist total in Task-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Project : "
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/totalproject_team2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24"
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+
+                </LinearLayout>
+
+                <!-- Total Member -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/totalproject_row2"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/member">
+                    </ImageView>
+
+                    <!--Task on Team-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Member : "
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+
+                    <TextView
+                        android:id="@+id/totalmember_team2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23"
+                        android:textColor="@color/text_color"
+                        android:textSize="16dp"></TextView>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
