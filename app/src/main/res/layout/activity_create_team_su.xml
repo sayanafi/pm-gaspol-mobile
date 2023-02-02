@@ -28,7 +28,7 @@
 
         <!-- Title Page -->
         <TextView
-            android:layout_below="@+id/imgclose"
+            android:layout_below="@+id/imgclose_create"
             android:id="@+id/titlePage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
