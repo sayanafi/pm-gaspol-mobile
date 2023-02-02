@@ -20,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.pasukanlangit.pmgaspol.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class Dashboard extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_dashboard);
 
         //SAY MY NAMEEE
@@ -43,7 +44,7 @@ public class Dashboard extends AppCompatActivity {
 
         //legend = findViewById(R.id.chartlegend);
         pieChart = findViewById(R.id.chartoverview);
-        setupPieChart();
+//        setupPieChart();
         loadPieData();
 
         // Initialize and assign variable
@@ -85,24 +86,24 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
-    private void setupPieChart() {
-        pieChart.setDrawHoleEnabled(true);
-//        pieChart.setUsePercentValues(false);
-        pieChart.setCenterText("12");
-//        pieChart.setEntryLabelTextSize(12);
-//        pieChart.setEntryLabelColor(Color.WHITE);
-        pieChart.setCenterTextSize(24);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setDrawEntryLabels(false);
-
-        Legend l = pieChart.getLegend();
-        l.setForm(Legend.LegendForm.CIRCLE);
-        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
-        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
-        l.setOrientation(Legend.LegendOrientation.VERTICAL);
-        l.setDrawInside(true);
-        l.setEnabled(false);
-    }
+//    private void setupPieChart() {
+//        pieChart.setDrawHoleEnabled(true);
+////        pieChart.setUsePercentValues(false);
+//        pieChart.setCenterText("12");
+////        pieChart.setEntryLabelTextSize(12);
+////        pieChart.setEntryLabelColor(Color.WHITE);
+//        pieChart.setCenterTextSize(24);
+//        pieChart.getDescription().setEnabled(false);
+//        pieChart.setDrawEntryLabels(false);
+//
+//        Legend l = pieChart.getLegend();
+//        l.setForm(Legend.LegendForm.CIRCLE);
+//        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+//        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+//        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+//        l.setDrawInside(true);
+//        l.setEnabled(false);
+//    }
 
     //LOAD DATA TOTAL PROJECT YANG AKTIF SETIAP TEAM
     private void loadPieData() {
