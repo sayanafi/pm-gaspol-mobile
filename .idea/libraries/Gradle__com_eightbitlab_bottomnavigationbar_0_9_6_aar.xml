@@ -1,15 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.eightbitlab:bottomnavigationbar:0.9.6@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9cd959c6b15ad6b8dfd6a2ed8513902f/jetified-bottomnavigationbar-0.9.6/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9cd959c6b15ad6b8dfd6a2ed8513902f/jetified-bottomnavigationbar-0.9.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9cd959c6b15ad6b8dfd6a2ed8513902f/jetified-bottomnavigationbar-0.9.6/res" />
+      <root url="jar://$USER_HOME$/gradel-alvin/caches/transforms-2/files-2.1/3cc0c36ab7312dc3ecaa384674691941/jetified-bottomnavigationbar-0.9.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/gradel-alvin/caches/transforms-2/files-2.1/3cc0c36ab7312dc3ecaa384674691941/jetified-bottomnavigationbar-0.9.6/res" />
+      <root url="file://$USER_HOME$/gradel-alvin/caches/transforms-2/files-2.1/3cc0c36ab7312dc3ecaa384674691941/jetified-bottomnavigationbar-0.9.6/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eightbitlab/bottomnavigationbar/0.9.6/7a7a28d4b43eb49c67190a9140569523563d2c49/bottomnavigationbar-0.9.6-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/gradel-alvin/caches/modules-2/files-2.1/com.eightbitlab/bottomnavigationbar/0.9.6/7a7a28d4b43eb49c67190a9140569523563d2c49/bottomnavigationbar-0.9.6-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eightbitlab/bottomnavigationbar/0.9.6/3d9ca7c0fc855bcf4e2e9f492ee83d355950d23d/bottomnavigationbar-0.9.6-sources.jar!/" />
+      <root url="jar://$USER_HOME$/gradel-alvin/caches/modules-2/files-2.1/com.eightbitlab/bottomnavigationbar/0.9.6/3d9ca7c0fc855bcf4e2e9f492ee83d355950d23d/bottomnavigationbar-0.9.6-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

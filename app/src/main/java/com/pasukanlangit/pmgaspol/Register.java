@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity {
 
     //Login API
     private void post(String nama, String email, String pass) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://pmgaspol.my.id/UsersApi/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("https:/pmgaspol.my.id/UsersApi/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiInterface retrofitAPI = retrofit.create(ApiInterface.class);
         ApiRegister userModel1 = new ApiRegister(nama, email, pass);
         Call<ResponseBody> call = retrofitAPI.registerPost(userModel1);

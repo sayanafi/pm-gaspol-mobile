@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark"
+    tools:context=".SuperUser.ApproveMember_SU">
+
+    <!-- Heading -->
+    <RelativeLayout
+        android:id="@+id/headingTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Notification Icon -->
+        <ImageView
+            android:id="@+id/imgclose_create"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/closeicon"
+            android:onClick="closeBtn"></ImageView>
+
+        <!-- Title Page -->
+        <TextView
+            android:layout_below="@+id/imgclose_create"
+            android:id="@+id/titlePage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/intersemibold"
+            android:text="Member Request"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <!-- Desc Page -->
+        <TextView
+            android:id="@+id/descTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titlePage"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/interregular"
+            android:text="Lets Approve Your Member 🔥"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+
+
+    </RelativeLayout>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="160dp"
+        android:paddingTop="30dp"
+        android:paddingHorizontal="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/card_create">
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refreshRequest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-5dp">
+
+            <ListView
+                android:id="@+id/listRequest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="1dp"
+                android:divider="@color/form"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,31 +66,65 @@
         android:background="@drawable/card_create">
 
 
+        <TextView
+            android:id="@+id/title_nameteam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/intermedium"
+            android:text="Name (required)"
+            android:textColor="@color/primary_dark"
+            android:paddingBottom="10dp"
+            android:textSize="16dp"></TextView>
+
         <EditText
-            android:id="@+id/editEmailLogin"
+            android:id="@+id/editNamaTeam"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/field_create"
             android:ems="10"
-            android:hint="Email Address"
-            android:inputType="textEmailAddress"
+            android:hint="Team name"
             android:paddingStart="15dp"
             android:textColor="@color/text_color"
             android:textColorHint="@color/form" />
 
+        <TextView
+            android:id="@+id/title_deskteam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/intermedium"
+            android:text="Description"
+            android:textColor="@color/primary_dark"
+            android:paddingBottom="10dp"
+            android:textSize="16dp"></TextView>
+
         <EditText
-            android:id="@+id/editPasswordLogin"
+            android:id="@+id/editDeskripsiTeam"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="150dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/field_create"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="Team description"
+            android:paddingTop="15dp"
             android:paddingStart="15dp"
             android:textColor="@color/text_color"
-            android:textColorHint="@color/form" />
+            android:textColorHint="@color/form"
+            android:gravity="top"/>
+
+        <Button
+            android:id="@+id/btnCreateTeam"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/descTitle"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_default"
+            android:fontFamily="@font/intersemibold"
+            android:text="Create Team"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
 
     </LinearLayout>

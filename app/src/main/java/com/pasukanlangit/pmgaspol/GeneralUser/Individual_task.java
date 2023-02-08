@@ -14,9 +14,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.pasukanlangit.pmgaspol.HttpHandler;
-import com.pasukanlangit.pmgaspol.ListAdapter;
-import com.pasukanlangit.pmgaspol.ListData;
 import com.pasukanlangit.pmgaspol.R;
 import com.pasukanlangit.pmgaspol.SuperUser.Dashboard_SU;
 
@@ -28,8 +25,8 @@ import java.util.ArrayList;
 
 public class Individual_task extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    ListAdapter adapter;
+    /*RecyclerView recyclerView;
+
     ArrayList<com.pasukanlangit.pmgaspol.ListData> ListData = new ArrayList<>();
     private GetTask gTask;
 
@@ -160,5 +157,5 @@ public class Individual_task extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             recyclerView.setAdapter(adapter);
         }
-    }
+    }*/
 }

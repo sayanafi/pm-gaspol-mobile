@@ -22,6 +22,11 @@
         app:itemIconTint="@color/white"
         app:labelVisibilityMode="unlabeled"/>
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <!-- Heading -->
     <RelativeLayout
         android:id="@+id/headingTask"
@@ -132,6 +137,8 @@
 
     </RelativeLayout>
 
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <!-- Content -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -180,6 +187,43 @@
             </androidx.appcompat.widget.AppCompatButton>
 
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/updatenamalbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/intermedium"
+            android:text="Full Name"
+            android:textColor="@color/primary_dark"
+            android:paddingBottom="10dp"
+            android:textSize="16dp"></TextView>
+
+        <EditText
+            android:id="@+id/updateNamaField"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/field_create"
+            android:ems="10"
+            android:hint="Your Name"
+            android:paddingStart="15dp"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/form" />
+
+        <Button
+            android:id="@+id/btnUpdateProfile"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/descTitle"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_default"
+            android:fontFamily="@font/intersemibold"
+            android:text="Update Profile"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
     </LinearLayout>
 

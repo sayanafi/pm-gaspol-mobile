@@ -91,7 +91,7 @@ public class Login extends AppCompatActivity {
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://pmgaspol.my.id/AuthApi/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("https:/pmgaspol.my.id/AuthApi/").addConverterFactory(GsonConverterFactory.create()).build();
         ApiInterface retrofitAPI = retrofit.create(ApiInterface.class);
         ApiLogin userLogin = new ApiLogin(email, pass);
         Call<ResponseBody> call = retrofitAPI.loginPost(userLogin);
@@ -99,6 +99,10 @@ public class Login extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.code() != 200){
+                    sweetAlertDialog.dismiss();
+                    alert("Akun Tidak Valid", SweetAlertDialog.WARNING_TYPE);
+                }
                 try {
                     assert response.body() != null;
                     String responseString = response.body().string();
@@ -107,9 +111,10 @@ public class Login extends AppCompatActivity {
                     String email = jsonObject.getString("email");
                     String role = jsonObject.getString("role");
                     String nama = jsonObject.getString("nama");
-                    setSession(email, role, accesstoken, nama);
+                    String id = jsonObject.getString("id");
+                    setSession(email, role, accesstoken, nama,id);
                 }catch (JSONException | IOException json){
-                    sweetAlertDialog.dismissWithAnimation();
+                    sweetAlertDialog.dismiss();
                     Log.e(TAG, "onFailure: ", json);
                     alert("Error throw " + json.getLocalizedMessage(), SweetAlertDialog.ERROR_TYPE);
                 }
@@ -118,7 +123,8 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                sweetAlertDialog.dismissWithAnimation();
+                sweetAlertDialog.dismiss();
+                alert("Akun Tidak Valid", SweetAlertDialog.WARNING_TYPE);
             }
         });
     }
@@ -138,9 +144,10 @@ public class Login extends AppCompatActivity {
 //        setSession(username,roles,access);
 //    }
 
-    private void setSession(String email, String roles,String accestoken, String nama) {
+    private void setSession(String email, String roles,String accestoken, String nama,String id) {
         SharedPreferences.Editor editor = getSharedPreferences("akun", MODE_PRIVATE).edit();
         editor.putString("accesstoken",accestoken);
+        editor.putString("id",id);
         editor.putString("email",email);
         editor.putString("nama",nama);
         editor.putString("roles",roles);

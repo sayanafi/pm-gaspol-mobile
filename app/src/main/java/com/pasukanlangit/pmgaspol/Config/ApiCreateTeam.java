@@ -8,28 +8,28 @@ public class ApiCreateTeam {
     @Expose
     private String team;
 
-    @SerializedName("deskripsi_team")
+    @SerializedName("deskripsi")
     @Expose
-    private String deskripsiteam;
+    private String deskripsi;
 
-    public ApiCreateTeam(String team, String deskripsiteam) {
+    public ApiCreateTeam(String team, String deskripsi) {
         this.team = team;
-        this.deskripsiteam = deskripsiteam;
+        this.deskripsi = deskripsi;
     }
 
     public String getTeam() {
         return team;
     }
 
-    public void setTeam(String email) {
+    public void setTeam(String team) {
         this.team = team;
     }
 
-    public String getDeskripsiteam() {
-        return deskripsiteam;
+    public String getDeskripsi() {
+        return deskripsi;
     }
 
-    public void setPassword(String team) {
-        this.deskripsiteam = deskripsiteam;
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 }
